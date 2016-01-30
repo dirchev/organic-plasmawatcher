@@ -33,7 +33,7 @@ var setUpServer = function (plasma, dna) {
   })
 
   var server = app.listen(dna.port || 1335, function () {
-    console.log('Organic emailpreview listening at http://localhost:%s', server.address().port)
+    console.log('Organic plasmawatcher listening at http://localhost:%s', server.address().port)
   })
 
   var sockets = {}
@@ -70,12 +70,12 @@ module.exports = function (plasma, dna) {
     var unsubscribed = self.dna.unsubscribedTypes || ['console', 'build']
     if (unsubscribed.indexOf(chemical.type) === -1) {
       try {
-        chemical.jsonRepresentation = JSON.stringify(chemical, null, 4)
+        chemical.jsonRepresentation = JSON.stringify(chemical, null, 2)
       } catch (e) {
         chemical = {
           type: 'shit object'
         }
-        chemical.jsonRepresentation = JSON.stringify(chemical, null, 4)
+        chemical.jsonRepresentation = JSON.stringify(chemical, null, 2)
       }
       chemicals.push(chemical)
     }
