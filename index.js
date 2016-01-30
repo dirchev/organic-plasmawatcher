@@ -15,6 +15,12 @@ var setUpServer = function (plasma, dna) {
   app.get('/bootstrap.min.css', function (req, res) {
     res.sendFile(__dirname + '/node_modules/bootstrap/dist/css/bootstrap.min.css', 'utf8')
   })
+  app.get('/bootstrap.min.js', function (req, res) {
+    res.sendFile(__dirname + '/node_modules/bootstrap/dist/js/bootstrap.min.js', 'utf8')
+  })
+  app.get('/jquery.min.js', function (req, res) {
+    res.sendFile(__dirname + '/node_modules/jquery/dist/jquery.min.js', 'utf8')
+  })
   app.get('/', function (req, res) {
     var listeners = plasma['listeners'].map(function (listener) {
       return listener.pattern
