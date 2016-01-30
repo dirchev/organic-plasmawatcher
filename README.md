@@ -16,3 +16,8 @@ Shows all emitted chemicals in the plasma and renders them in a pretty web page.
   "port": "1335" // port for the express app
 }
 ```
+
+## TODO
+
+* search field
+* emit chemicals to the plasma
