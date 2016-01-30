@@ -12,7 +12,7 @@ Shows all emitted chemicals in the plasma and renders them in a pretty web page.
 ```js
 "organic-plasmawatcher": {
   "source": "node_modules/organic-plasmawatcher",
-  "unsubscribedTypes": ["console", "build"], // chemicals with this types wont be shown
+  "unsubscribedTypes": ["console", "build"], // chemicals with these types wont be shown
   "port": "1335" // port for the express app
 }
 ```
