@@ -67,7 +67,7 @@ module.exports = function (plasma, dna) {
   setUpServer(plasma, dna)
 
   plasma.pipe(function (chemical) {
-    var unsubscribed = self.dna.unsubscribedTypes || ['console', 'build']
+    var unsubscribed = self.dna.unsubscribedTypes || []
     if (unsubscribed.indexOf(chemical.type) === -1) {
       try {
         chemical.jsonRepresentation = JSON.stringify(chemical, null, 2)
