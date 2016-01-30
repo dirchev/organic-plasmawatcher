@@ -1,29 +1,45 @@
 <html>
   <head>
-    <title>Plasma debugger</title>
+    <title>Plasma Watcher</title>
     <link type="text/css" rel="stylesheet" href="/bootstrap.min.css" />
+    <script src="/jquery.min.js"></script>
+    <script src="/bootstrap.min.js"></script>
   </head>
   <body>
     <div class="container-fluid">
       <div class="jumbotron">
-        <h1>Plasma debugger</h1>
+        <h1>Plasma Watcher</h1>
       </div>
       <div class="row">
         <div class="col-sm-8">
+          <div class="alert alert-info">
+            <a href="." class="close" data-dismiss="alert" aria-label="Refresh">
+              Refresh
+            </a>
+            <p>Most recent on top.</p>
+          </div>
           <% for(var i = chemicals.length - 1; i >= 0; i--) { %>
-            <div class="panel panel-primary">
+            <div class="panel panel-default">
               <div class="panel-heading">
-                <%= chemicals[i].type %>
+                <a
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  data-toggle="collapse"
+                  href="#chemical<%= i %>">
+                  <%= chemicals[i].type %>
+                </a>
               </div>
-              <div id="chemical<%= i %>" class="panel-body">
-                <div><pre><%= chemicals[i].jsonRepresentation %></pre></div>
+              <div id="chemical<%= i %>" class="collapse">
+                <div class="panel-body">
+                  <pre><%= chemicals[i].jsonRepresentation %></pre>
+                </div>
               </div>
             </div>
           <% } %>
         </div>
         <div class="col-sm-4">
           <ul class="list-group">
-            <li class="list-group-item active">Listeners</li>
+            <li class="list-group-item active">Already Registered Listeners</li>
             <% for(var i = 0; i < listeners.length; i++) { %>
               <li class="list-group-item"><%= listeners[i] %></li>
             <% } %>
